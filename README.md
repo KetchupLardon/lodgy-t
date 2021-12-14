@@ -44,3 +44,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+start by building the architecture of the website
+couldn't export svg from figma so i found relevent one on internet then pass it through SVGOMG for optimisation
+AccordionItem fetch description and name because some of tasks have description and others have name, I don't know if it's a problem from the API or if it was done in purpose for the exercise.
