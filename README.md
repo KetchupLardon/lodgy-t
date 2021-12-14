@@ -1,50 +1,9 @@
-# Getting Started with Create React App
+## Process
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-start by building the architecture of the website
-couldn't export svg from figma so i found relevent one on internet then pass it through SVGOMG for optimisation
-AccordionItem fetch description and name because some of tasks have description and others have name, I don't know if it's a problem from the API or if it was done in purpose for the exercise.
+1. Prepare the architecture of the project by creating the differents folders.
+2. Import SVG: I couldn't export the SVG from the Figma so I just found SVG that looks same then use [SVG OMG](https://jakearchibald.github.io/svgomg/) for optimisation. Then transform it into React component for being able to use props.
+3. Fetch the API for see if I could receive the datas. I created a class for evolutivity, in case if other requests from this API will be add.
+4. Integration of the mockup without the logic. Some of the tasks didn't have description, but name instead. I don't know if it was done in purpose for the exercise or not. So I ended up by using a condition to check if there is a no description, display the name.
+5. Create the animation of the accordion and style the checkboxes. In bigger project I would use styles-component or Maerial UI but it felt useless to import packages just for one component.
+6. Connect the progressbar by checking the number of tasks that the user checked and convert it into percentage.
+7. I didn't find a proper way to check if all tasks per accordion section was checked to turn the title section into green. I already get the amount of tasks per section to compare the number of checked task and the amount of tasks. But didn't find a way to get the number of checked per section. Still working on it.
