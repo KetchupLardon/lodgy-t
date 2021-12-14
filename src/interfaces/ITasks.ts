@@ -12,12 +12,8 @@ export interface ITasks {
     tasksGroupId: number;
 }
 
-export interface IAccordionItemProps {
-    
-    checked: boolean;
-    value: number;
-    description?: string;
-    name?: string;
+export interface IAccordionItemProps { 
+    task: ITaskDetails;
     id: number;
     tasksGroupId: number;
 }

@@ -33,7 +33,7 @@ export const AccordionContainer = ({name, tasks, tasksGroupId, tasksAmount}: ITa
                 }}>
                 {
                     tasks?.map((task, i) => {
-                        return <AccordionItem key={"data_item" + i} checked={task.checked} description={task.description} name={task.name} value={task.value} tasksGroupId={tasksGroupId} id={i} />
+                        return <AccordionItem key={"data_item" + i} task={task} tasksGroupId={tasksGroupId} id={i} />
                     })
                 }
             </div>

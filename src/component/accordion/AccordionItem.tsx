@@ -2,11 +2,14 @@ import React, {useContext, useState, useEffect} from "react";
 import { ProgressBarData } from "../Container";
 import { IAccordionItemProps } from "../../interfaces/ITasks";
 
-/*
-I took "description" and "name" because some of the tasks doesn't have description but name.
-I don't know if it's a problem from the API or if it was done in purpose for the exercise.
-*/
-export const AccordionItem = ({checked, description, name, value, id, tasksGroupId}: IAccordionItemProps) => {
+export const AccordionItem = ({task, id, tasksGroupId}: IAccordionItemProps) => {
+
+    
+    /*
+    I took "description" and "name" because some of the tasks doesn't have description but name.
+    I don't know if it's a problem from the API or if it was done in purpose for the exercise.
+    */
+    const {checked, description, name} = task;
     
     const { allTasksChecked, setAllTasksChecked } = useContext(ProgressBarData);
 
