@@ -1,0 +1,78 @@
+.container {
+  width: 90%;
+  margin-top: 2em;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.high_container {
+  padding-left: 7em;
+}
+
+.progress_bar {
+  position: relative;
+  height: 30px;
+  width: 90%;
+  border-radius: 50px;
+  border: 1px #333;
+}
+
+.progress_bar_filler {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  background: #00b797;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
+  padding-right: 10px;
+}
+
+.bottom_container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3em;
+}
+
+.accordion_container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+.accordion_container > div {
+  display: flex;
+}
+
+.accordion_container > div:last-child {
+  color: #999999;
+  justify-content: flex-end;
+}
+
+.accordion_container > div:last-child > p {
+  padding-right: 0.6em;
+}
+
+.accordion_container > div:first-child > p {
+  padding-left: 1em;
+}
+
+.accordion_container_item {
+  display: flex;
+  align-items: center;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+}
+
+.accordion_container_item > label {
+  padding-left: 1em;
+}
+
+.border_bottom_grey:not(:last-child) {
+  border-bottom: 1px solid #cccccc;
+}

@@ -3,6 +3,7 @@ import { ProgressBar } from "./progressbar/ProgressBar";
 import { AccordionContainer } from "./accordion/AccordionContainer";
 import { TaskData } from "../api/TaskData";
 import { ITasks } from "../interfaces/ITasks";
+import '../css/accordion.css';
 
 
 export const ProgressBarData: React.Context<any> = createContext(null);
@@ -19,9 +20,9 @@ export const Container = () => {
             setDatas(result)
             let taskCounter: number = 0;
             let activeTaskCounter: number = 0;
-            result.map((data: ITasks) => {
+            result.forEach((data: ITasks) => {
                 taskCounter = taskCounter + data.tasks.length;
-                data.tasks.map(task => {
+                data.tasks.forEach(task => {
                     if(task.checked)activeTaskCounter++;
                 })
             })

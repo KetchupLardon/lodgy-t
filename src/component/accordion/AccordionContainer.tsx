@@ -6,7 +6,7 @@ import { ArrowDownSVG } from "../../assets/icons/ArrowDownSVG";
 import { ITasks } from "../../interfaces/ITasks";
 
 export const AccordionContainer = ({name, tasks, tasksGroupId, tasksAmount}: ITasks) => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
     const currentHeight = useRef<any>();
     
     return (

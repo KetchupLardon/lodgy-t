@@ -11,9 +11,3 @@ export interface ITasks {
     tasks: ITaskDetails[];
     tasksGroupId: number;
 }
-
-export interface IAccordionItemProps { 
-    task: ITaskDetails;
-    id: number;
-    tasksGroupId: number;
-}
