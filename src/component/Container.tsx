@@ -26,9 +26,9 @@ export const Container = () => {
                     if(task.checked)activeTaskCounter++;
                 })
             })
-            //Count the number of task to set the percentage of the progressbar to its maximum value
+            //Count the number of tasks to set the percentage of the progressbar to its maximum value
             setAllTaskAmount(taskCounter);
-            //Count the number of checked task returned by the API to initialise the ProgressBar
+            //Count the number of checked tasks returned by the API to initialise the progress of the ProgressBar
             setAllTasksChecked(activeTaskCounter);
         });
     }, []);

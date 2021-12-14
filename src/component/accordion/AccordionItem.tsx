@@ -17,7 +17,7 @@ export const AccordionItem = ({task, id, tasksGroupId}: IAccordionItemProps) => 
     */
     const {checked, description, name} = task;
     const { allTasksChecked, setAllTasksChecked } = useContext(ProgressBarData);
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
 
     useEffect(() => {
         setIsChecked(checked);
