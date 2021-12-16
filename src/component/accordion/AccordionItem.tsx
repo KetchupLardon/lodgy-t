@@ -15,8 +15,8 @@ export const AccordionItem = ({task, id, tasksGroupId}: IAccordionItemProps) => 
     I took "description" and "name" because some of the tasks doesn't have description but name.
     I don't know if it's a problem from the API or if it was done in purpose for the exercise.
     */
-    const {checked, description, name} = task;
-    const { allTasksChecked, setAllTasksChecked } = useContext(ProgressBarData);
+    const {checked, description, name, value} = task;
+    const { allTasksCheckedValues, setAllTasksCheckedValues } = useContext(ProgressBarData);
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
     useEffect(() => {
@@ -25,10 +25,10 @@ export const AccordionItem = ({task, id, tasksGroupId}: IAccordionItemProps) => 
 
     const onChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.checked) {
-            setAllTasksChecked(allTasksChecked + 1);
+            setAllTasksCheckedValues(allTasksCheckedValues + value);
             setIsChecked(true);
         } else {
-            setAllTasksChecked(allTasksChecked - 1);
+            setAllTasksCheckedValues(allTasksCheckedValues - value);
             setIsChecked(false);
         }
     }

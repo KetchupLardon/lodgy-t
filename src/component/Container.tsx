@@ -10,8 +10,8 @@ export const ProgressBarData: React.Context<any> = createContext(null);
 
 export const Container = () => {
     const [datas, setDatas] = useState<ITasks[]>([]);
-    const [allTasksChecked, setAllTasksChecked] = useState<number>(0)
-    const [allTasksAmount, setAllTaskAmount] = useState<number>(0)
+    const [allTasksCheckedValues, setAllTasksCheckedValues] = useState<number>(0)
+    const [allValuesTasks, setAllValuesTasks] = useState<number>(0)
 
     useEffect( () => {   
         const taskData = new TaskData();
@@ -21,20 +21,20 @@ export const Container = () => {
             let taskCounter: number = 0;
             let activeTaskCounter: number = 0;
             result.forEach((data: ITasks) => {
-                taskCounter = taskCounter + data.tasks.length;
                 data.tasks.forEach(task => {
-                    if(task.checked)activeTaskCounter++;
+                    taskCounter = taskCounter + task.value;
+                    if(task.checked)activeTaskCounter+= task.value;
                 })
             })
-            //Count the number of tasks to set the percentage of the progressbar to its maximum value
-            setAllTaskAmount(taskCounter);
-            //Count the number of checked tasks returned by the API to initialise the progress of the ProgressBar
-            setAllTasksChecked(activeTaskCounter);
+            //Add all tasks values to set the percentage of the progressbar to its maximum value
+            setAllValuesTasks(taskCounter);
+            //Add the values of checked tasks returned by the API to initialise the progress of the ProgressBar
+            setAllTasksCheckedValues(activeTaskCounter);
         });
     }, []);
     
     return (
-        <ProgressBarData.Provider value={{allTasksAmount, allTasksChecked, setAllTasksChecked}} >
+        <ProgressBarData.Provider value={{allValuesTasks, allTasksCheckedValues, setAllTasksCheckedValues}} >
             <div  className="container">
                 <div className="high_container">
                     <h1>Lodgify Grouped Tasks</h1>
